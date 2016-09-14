@@ -8,18 +8,7 @@ function addMap(){
   if(cityInput){
     createMapFromUserSearch(cityInput);
   } else {
-    geoLocation.getLocation().then(function(position) {
-      center = {lat: position.coords.latitude, lng: position.coords.longitude};
-      createMapWithListeners(center);
-      var citySearch = document.getElementById('city-submit');
-      citySearch.addEventListener('click',function(){
-        codeAddress();
-      })
-    }).fail(function(err) {
-      center = {lat: 47.6104, lng: -122.2007};
-      console.log(err);
-      createMapWithListeners(center);
-    });
+    createMapFromGeolocation();
   }
 }
 
@@ -33,12 +22,27 @@ function createMapFromUserSearch(cityInput){
   })
 }
 
+function createMapFromGeolocation(){
+  geoLocation.getLocation().then(function(position) {
+    center = {lat: position.coords.latitude, lng: position.coords.longitude};
+    createMapWithListeners(center);
+    var citySearch = document.getElementById('city-submit');
+    citySearch.addEventListener('click',function(){
+      codeAddress();
+    })
+  }).fail(function(err) {
+    center = {lat: 47.6104, lng: -122.2007};
+    createMapWithListeners(center);
+  });
+}
+
 function createMapWithListeners(center){
   map = new google.maps.Map(document.getElementById('map'), {
     center: center,
     scrollwheel: true,
     zoom: 9
   });
+  findCoffee(center, 9);
   addMapListeners();
 }
 
@@ -93,8 +97,8 @@ function changeMapCenter(results, status) {
 
 function findCoffee(currentCenter,zoom){
   var radiiByZoom  = {
-    9 : '50000', 10 : '50000', 11 : '20000', 12 : '15000', 13 : '7000',
-    14 : '5000', 15 : '4000', 16 : '3000', 17 : '2000', 18 : '1000'
+    9 : '40000', 10 : '30000', 11 : '20000', 12 : '10000', 13 : '6000',
+    14 : '5000', 15 : '3500', 16 : '2000', 17 : '1500', 18 : '1000'
   },
   request = {
     location: new google.maps.LatLng(currentCenter.lat, currentCenter.lng),
@@ -102,31 +106,41 @@ function findCoffee(currentCenter,zoom){
     types: ['cafe']
   },
   service = new google.maps.places.PlacesService(map);
-  service.nearbySearch(request, function(results, status) {
-    if (status == google.maps.places.PlacesServiceStatus.OK) {
-      for (var i = 0; i < results.length; i++) {
-        var place = results[i];
-        var placeId = results[i].place_id;
-        // If the request succeeds, draw the place location on
-        // the map as a marker, and register an event to handle a
-        // click on the marker.
-        if(!checkIfChain(place.name) && checkIfCafe(place.types)){
-          var marker = new google.maps.Marker({
-            map: map,
-            position: place.geometry.location,
-            title: placeId,
-            icon: 'images/coffee.svg'
-          });
-          marker.infowindow = new google.maps.InfoWindow({
-            content : '<div class="info-window">'+
-            '<h4>'+place.name+'</h4>'+
-            '<p> rating : '+place.rating+'</p>'+
-            '</div>'
-          });
-          addMarkerListeners(marker);
-        }
+  service.nearbySearch(request, processSearchResults);
+}
+
+function processSearchResults(results, status, pagination){
+  if (status == google.maps.places.PlacesServiceStatus.OK) {
+    for (var i = 0; i < results.length; i++) {
+      var place = results[i];
+      var placeId = results[i].place_id;
+      addLocalCafe(place,placeId);
+      if (pagination.hasNextPage) {
+        pagination.nextPage();
       }
     }
+  }
+}
+
+function addLocalCafe(place,placeId){
+  if(!checkIfChain(place.name) && checkIfCafe(place.types)){
+    var marker = new google.maps.Marker({
+      map: map,
+      position: place.geometry.location,
+      title: placeId,
+      icon: 'images/coffee-cup.svg'
+    });
+    addInfoWindow(marker,place);
+    addMarkerListeners(marker);
+  }
+}
+
+function addInfoWindow(marker,place){
+  marker.infowindow = new google.maps.InfoWindow({
+    content : '<div class="info-window">'+
+    '<h4>'+place.name+'</h4>'+
+    '<p> rating : '+place.rating+'</p>'+
+    '</div>'
   });
 }
 
@@ -140,7 +154,6 @@ function addMarkerListeners(marker){
   marker.addListener('click', function() {
     getCoffeeDetails(this.title);
   });
-
 }
 
 function getCoffeeDetails(id){
@@ -148,13 +161,11 @@ function getCoffeeDetails(id){
     placeId : id
   }
   service = new google.maps.places.PlacesService(map);
-  service.getDetails(request, callback);
-
-  function callback(place, status) {
+  service.getDetails(request, function (place, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
       addCafeToPage(place);
     }
-  }
+  })
 }
 
 function setMapOnAll(map) {

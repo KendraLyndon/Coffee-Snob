@@ -30,15 +30,7 @@ pinkey : #4A1A31*/
 }
 
 #city-input{
-  width:200px;
-  height:200px;
-  background-color: white;
-  color: black;
-}
-
-#city-input > p{
-  color:black;
-  margin-top: 30px;
+  display: none;
 }
 
 #view {
