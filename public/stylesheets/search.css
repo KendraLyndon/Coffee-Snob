@@ -1,0 +1,56 @@
+/*color scheme :
+main : #33190B
+purpley : #291C40
+pinkey : #4A1A31*/
+/*shades : #401F0E, #33190B*/
+
+#map {
+  width: 65vw;
+  height: 90vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.info-window, .info-window > p {
+  color: black;
+}
+
+#info{
+  width: 510px;
+  height: 90vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  background-color: #4A1A31;
+  overflow: auto;
+}
+
+#city-input{
+  width:200px;
+  height:200px;
+  background-color: white;
+  color: black;
+}
+
+#city-input > p{
+  color:black;
+  margin-top: 30px;
+}
+
+#view {
+  width: 100%;
+  height: 50%;
+  background-color: white;
+  overflow: scroll;
+}
+
+#results {
+  width: 100%;
+  height: 50%;
+  background-color: grey;
+  overflow: scroll;
+}

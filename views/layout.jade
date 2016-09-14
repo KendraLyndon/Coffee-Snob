@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    title Coffee Snob
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Lato:100')
+    link(rel='stylesheet', href='/stylesheets/main.css')
+    link(rel='stylesheet', href='/stylesheets/search.css')
+  body
+    header
+      div(class='top-bar-wrap')
+        div(class='title-wrap')
+          h1 COFFEE SNOB
+          h3 support local businesses
+        form(action="/search" method="get")
+          input(type='text' id='city' name='city' placeholder='search by city')
+          input(type='submit' id='city-submit' class='btn' value='go')
+        div(class='link-container')
+          a(href='google.com') about
+          a(href='google.com') contact us
+    main
+      block content
+    footer
+      small &copy Kendra Lyndon 2016
+    script(src="https://code.jquery.com/jquery-3.0.0.js" integrity="sha256-jrPLZ+8vDxt2FnE1zvZXCkCcebI/C8Dt5xyaQBjxQIo=" crossorigin="anonymous")
+    script(type='text/javascript' src='javascripts/effects.js')
+    script(type='text/javascript' src='javascripts/map.js')
+    script(type='text/javascript' src='javascripts/shop-validators.js')
+    script(type='text/javascript' src='javascripts/result.js')
+    script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuNZFnztsemUai7NSIdKMb1igGVPQCJ48&callback=addMap&libraries=places")

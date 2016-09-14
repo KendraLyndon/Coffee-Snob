@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: #eeeeee;
+  font-family: 'Lato', sans-serif;
+}
+
+header {
+  width: 100%;
+  height: 75px;
+  position: relative;
+  z-index: 10;
+  background-color: #33190B;
+  box-shadow: 4px 0px 15px 4px #33190B;
+}
+
+.top-bar-wrap {
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header * {
+  display: inline-block;
+}
+
+input {
+  text-align: center;
+  font-size: 20px;
+  margin-left: 8px;
+  color: #713D1A;
+  background-color: #eeeeee;
+}
+
+input[type='text'] {
+  border: none;
+  border-radius: 4px;
+  height: 1.5em;
+  vertical-align: middle;
+}
+
+input[type='submit'] {
+  font-size: 20px;
+  padding: 0px 12px 2px 12px;
+  height: 1.5em;
+}
+
+.link-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+a {
+  display: block;
+  text-decoration: none !important;
+  color: #eeeeee;
+  margin-bottom: 5px;
+  margin-left: 15px;
+  text-align: right;
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 45px;
+}
+
+h3 {
+  font-size: 20px;
+  margin-left: 20px;
+  font-weight: lighter;
+}
+
+main {
+  position: relative;
+  top:0;
+  left:0;
+}
+
+#entry {
+  width: 100%;
+  height: 90vh;
+  background-image: url('../images/restaurant-beans-coffee-cup-large.jpg');
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#enter {
+  width: 230px;
+  border-radius: 0%;
+  border: 2px solid white;
+  text-align: center;
+  font-size: 45px;
+  color: white;
+}
+
+footer {
+  color: #eeeeee;
+  width: 100%;
+  height: 5vh;
+  background-color: #33190B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 0;
+}
+
+@media (max-width: 880px){
+  .title-wrap > h3, .link-container > a {
+    display: none;
+  }
+}
+
+@media (max-width: 560px){
+  form > * {
+    display: none !important;
+  }
+}
