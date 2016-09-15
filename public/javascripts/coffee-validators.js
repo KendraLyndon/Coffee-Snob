@@ -12,6 +12,10 @@ function checkIfCafe(types){
 }
 
 function checkIfChain(name){
+  // $.ajax({
+  //   url:"localhost:3000/chains",
+  //   method:"get"
+  // })
   var chains = ['Starbucks','Tully','Peet','Dunkin','Caribou','McCafe',
   'Costa Coffee', 'Tim Horton', 'Top Pot','The Coffee Bean & Tea Leaf',
   'Dunn Bros', "Seattle's Best", 'Coffee Beanery', 'Biggby', 'Gloria Jean',
