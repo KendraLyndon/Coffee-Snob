@@ -1,7 +1,7 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('favorites', function(table){
     table.increments();
-    table.integer('user_id').references('users.id');;
+    table.integer('user_id').references('users.id');
     table.integer('schedule_id').references('schedules.id');
     table.string('name');
     table.string('address');
