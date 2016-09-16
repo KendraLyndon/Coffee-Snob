@@ -1,4 +1,5 @@
 function addCafeToPage(place){
+
   console.log(place);
 }
 //

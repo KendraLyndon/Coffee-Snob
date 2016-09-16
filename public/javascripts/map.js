@@ -4,15 +4,6 @@ var geocoder;
 function addMap(){
   geocoder = new google.maps.Geocoder();
   var cityInput = document.getElementById('city-input').innerHTML;
-  var center;
-  if(cityInput){
-    createMapFromUserSearch(cityInput);
-  } else {
-    createMapFromGeolocation();
-  }
-}
-
-function createMapFromUserSearch(cityInput){
   geocoder.geocode( { 'address': cityInput}, function(results, status) {
     if (status == 'OK') {
       createMapWithListeners(results[0].geometry.location);
@@ -20,20 +11,6 @@ function createMapFromUserSearch(cityInput){
       alert('Geocode was not successful for the following reason: ' + status);
     }
   })
-}
-
-function createMapFromGeolocation(){
-  geoLocation.getLocation().then(function(position) {
-    center = {lat: position.coords.latitude, lng: position.coords.longitude};
-    createMapWithListeners(center);
-    var citySearch = document.getElementById('city-submit');
-    citySearch.addEventListener('click',function(){
-      codeAddress();
-    })
-  }).fail(function(err) {
-    center = {lat: 47.6104, lng: -122.2007};
-    createMapWithListeners(center);
-  });
 }
 
 function createMapWithListeners(center){
@@ -44,24 +21,6 @@ function createMapWithListeners(center){
   });
   findCoffee(center, 9);
   addMapListeners();
-}
-
-var geoLocation = {
-  getLocation: function() {
-    var deferred = $.Deferred();
-    if(navigator.geolocation) {
-      // geo location is supported. Call navigator.geolocation.getCurrentPosition and :
-      // - resolve the promise with the returned Position object, or
-      // - reject the promise with the returned PositionError object, or
-      // - time out after 5 seconds
-      navigator.geolocation.getCurrentPosition(deferred.resolve, deferred.reject, { timeout: 5000 });
-    } else {
-      //geo location isn't supported
-      //Reject the promise with a suitable error message
-      deferred.reject(new Error('Your browser does not support Geo Location.'));
-    }
-    return deferred.promise();
-  }
 }
 
 function addMapListeners(){
@@ -79,13 +38,6 @@ function addMapListeners(){
       findCoffee(currentCenter, zoom);
     }
   });
-}
-
-function codeAddress(address) {
-  if(!address){
-    address = document.getElementById('city').value;
-  }
-  geocoder.geocode( { 'address': address}, changeMapCenter)
 }
 
 function changeMapCenter(results, status) {

@@ -11,10 +11,18 @@ function checkIfCafe(types){
   return isCafe;
 }
 
+
 function checkIfChain(name){
   // $.ajax({
   //   url:"localhost:3000/chains",
   //   method:"get"
+  // }).then(function(chains){
+  //   for(var i=0; i<chains.length; i++){
+  //     if(name.includes(chains[i].name)){
+  //       return true;
+  //     }
+  //   }
+  //   return false;
   // })
   var chains = ['Starbucks','Tully','Peet','Dunkin','Caribou','McCafe',
   'Costa Coffee', 'Tim Horton', 'Top Pot','The Coffee Bean & Tea Leaf',
