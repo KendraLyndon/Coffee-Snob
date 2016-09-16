@@ -1,8 +1,11 @@
 /*color scheme :
-main : #33190B
-purpley : #291C40
-pinkey : #4A1A31*/
-/*shades : #401F0E, #33190B*/
+dark brown (text only) : #713D1A
+brown : #59261B
+greyish : #D8D9D0
+off-white : #F2F2F2
+brighter purpley : #B2417A
+purpley : #8C5A67
+purple-grey : #8C7474 */
 
 #map {
   width: 65vw;
@@ -25,8 +28,13 @@ pinkey : #4A1A31*/
   top: 0;
   right: 0;
   z-index: 2;
-  background-color: #4A1A31;
-  overflow: auto;
+  background-color: #D8D9D0;
+  overflow-y: auto;
+  box-shadow: 4px 0px 15px 4px #33190B;
+}
+
+.best-cafes {
+  color: black;
 }
 
 #city-input{
