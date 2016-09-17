@@ -19,6 +19,6 @@ module.exports = {
     });
   },
   delete: function(id){
-    return knex('favorites').where({'id',id}).del();
+    return knex('favorites').where({'id':id}).del();
   }
 }

@@ -9,11 +9,11 @@ module.exports = {
   },
   findByName: function(name){
     return knex('chains').where({'name':name}).first();
-  }
+  },
   add: function(input){
     return knex('chains').insert({'name':input});
   },
   delete: function(id){
-    return knex('chains').where({'id',id}).del();
+    return knex('chains').where({'id':id}).del();
   }
 }

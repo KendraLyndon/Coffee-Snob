@@ -20,6 +20,6 @@ module.exports = {
     });
   },
   delete: function(id){
-    return knex('schedules').where({'id',id}).del();
+    return knex('schedules').where({'id':id}).del();
   }
 }
