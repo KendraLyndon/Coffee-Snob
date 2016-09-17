@@ -16,7 +16,7 @@ module.exports = {
       'password':input.password
     });
   },
-  delete: function(input){
-    return knex('users').where({'id',input}).del();
+  delete: function(id){
+    return knex('users').where({'id',id}).del();
   }
 }
