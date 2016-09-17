@@ -17,41 +17,74 @@ purple-grey : #8C7474 */
   overflow: hidden;
 }
 
+#city-input {
+  display: none;
+}
+
 .info-window, .info-window > p {
   color: black;
 }
 
 #info{
+  padding-left: 15px;
+  padding-right: 15px;
   width: 510px;
   height: 90vh;
   position: absolute;
   top: 0;
   right: 0;
   z-index: 2;
-  background-color: #D8D9D0;
+  background-color: #f2f2f2;
   overflow-y: auto;
   box-shadow: 4px 0px 15px 4px #33190B;
 }
 
 #selected-cafe-container {
-  padding-left: 20px;
-  padding-right: 20px;
+  margin-top: 15px;
 }
 
-#city-input{
-  display: none;
+.svg {
+  display: inline-block;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
 }
 
-#view {
-  width: 100%;
-  height: 50%;
-  background-color: white;
-  overflow: scroll;
+.phone-svg {
+  background-image: url("../images/phone-receiver.svg");
 }
 
-#results {
-  width: 100%;
-  height: 50%;
-  background-color: grey;
-  overflow: scroll;
+.address-svg {
+  background-image: url("../images/location-pin.svg");
+}
+
+.web-svg {
+  background-image: url("../images/internet.svg");
+}
+
+.hours-svg {
+  background-image: url("../images/clock.svg");
+}
+
+.cafe-detail {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.cafe-container {
+  border: 2px solid #B2417A;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+.best-cafe-hours {
+  margin-bottom: 0;
+}
+
+.best-cafe-name {
+  margin-top: 0;
+}
+
+ul {
+  list-style: none;
 }
