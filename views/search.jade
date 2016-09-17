@@ -3,9 +3,22 @@ extends layout
 block content
   div(id='map')
   div(id='info')
-    p(id="city-input" class="hidden") #{city}
     div(class="selected-cafe")
-    div(class="best-cafes") Best cafes in #{city}
+    div(class="best-cafes")
+      h2 Best cafes in #{city}
+      each cafe in bestCafes
+        div(class="best-cafe-container")
+          h3 #{cafe.name}
+          ul
+            li address #{cafe.formatted_address}
+            li price Level #{cafe.price_level}
+            li rating #{cafe.rating}
+            li website #{cafe.website}
+          ul hours
+            each day in schedules[0].weekday_text
+              li #{day}
+  div(class="hidden")
+    p(id="city-input" class="hidden") #{city}
     form(id="cafe-form")
       input(id="cafe-name" class="hidden" type="text" name="name")
       input(id="cafe-address" class="hidden" type="text" name="address")

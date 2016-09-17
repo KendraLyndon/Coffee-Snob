@@ -1,7 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var http = require('http');
-var request = require('request');
 var geocoder = require('../helpers/geocoder');
 var cafes = require('../helpers/cafes');
 
@@ -16,25 +14,28 @@ router.get('/search', function(req, res, next) {
 
   geocoder.geocode(city)
     .then(function(location) {
-      cafes.getCafes(location[0])
-      .then(function(places) {
-        var cafes = JSON.parse(places).results;
-
+      cafes.bestCafeDetails(location[0]).then(results => {
+        var bestCafes = results.map(function(cafe){
+          return JSON.parse(cafe).result;
+        });
+        var schedules = bestCafes.map(function(cafe){
+          return cafe.opening_hours;
+        });
+        console.log(schedules);
         res.render('search',{
-                    city:city,
-                    topCafes:getTopCafes(cafes),
-                    loggedIn: true,
-                    userName: 'Kendra'
+          city:city,
+          bestCafes:bestCafes,
+          schedules:schedules,
+          loggedIn: true,
+          userName: 'Kendra'
         })
-      })
-      .catch(function(err){
-        console.log(err);
-      })
+      }, reason => {
+        console.log(reason)
+      });
     })
     .catch(function(err) {
       console.log(err);
     });
-
 });
 
 router.post('/search', function(req, res, next) {
@@ -45,14 +46,4 @@ router.get('/favorites', function(req, res, next) {
   res.render('favorites');
 });
 
-// router.get('/topCities', function(req, res, next) {
-//   res.render('favorites');
-// });
-
 module.exports = router;
-
-function getTopCafes(cafes){
-  return cafes.sort(function(a, b){
-    return b.rating - a.rating;
-  }).splice(0,3)
-}
