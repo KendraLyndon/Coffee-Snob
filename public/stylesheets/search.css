@@ -33,16 +33,9 @@ purple-grey : #8C7474 */
   box-shadow: 4px 0px 15px 4px #33190B;
 }
 
-.best-cafes {
-  color: black;
-}
-
-.best-cafe-container > * {
-  color: black;
-}
-
-.best-cafe-container > ul > * {
-  color: black;
+#selected-cafe-container {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 #city-input{
