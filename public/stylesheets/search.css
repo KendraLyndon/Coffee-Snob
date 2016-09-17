@@ -37,6 +37,14 @@ purple-grey : #8C7474 */
   color: black;
 }
 
+.best-cafe-container > * {
+  color: black;
+}
+
+.best-cafe-container > ul > * {
+  color: black;
+}
+
 #city-input{
   display: none;
 }
