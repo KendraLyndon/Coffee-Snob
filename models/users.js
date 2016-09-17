@@ -1,8 +1,10 @@
 var knex = require('../db/knex');
 
 module.exports = {
+  all: function(input){
+    return knex('users').select();
+  },
   find: function(input){
-    console.log(input.userName);
     return knex('users').where({'user_name':input.user_name,
                                 'password':input.password
                               }).first();
@@ -13,5 +15,8 @@ module.exports = {
       'email':input.email,
       'password':input.password
     });
+  },
+  delete: function(input){
+    return knex('users').where({'id',input}).del();
   }
 }
