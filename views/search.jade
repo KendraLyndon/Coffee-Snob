@@ -3,7 +3,27 @@ extends layout
 block content
   div(id='map')
   div(id='info')
-    div(id="selected-cafe-container")
+    div(id="selected-cafe-container" class="cafe-container")
+      h3(id="selected-name")
+      img(id="selected-photo")
+      div(class="detail-container")
+        div(class="svg phone-svg")
+        p(class="cafe-detail" id="selected-phone")
+      div(class="detail-container")
+        div(class="svg address-svg")
+        p(class="cafe-detail" id="selected-address")
+      div(class="detail-container")
+        div(class="svg web-svg")
+        p(class="cafe-detail" id="selected-web")
+      div(class="detail-container")
+        div(class="svg hours-svg")
+        p(class="cafe-detail") hours
+        ul(id="selected-hours")
+      div(class="detail-container")
+        p(class="cafe-detail" id="selected-price")
+        p(class="cafe-detail" id="selected-rating")
+      div(id="selected-reviews")
+      div(class="detail-container")
       form(id="cafe-form" class="hidden")
         input(id="cafe-name" class="hidden" type="text" name="name")
         input(id="cafe-address" class="hidden" type="text" name="address")
@@ -20,17 +40,28 @@ block content
         input(id="cafe-sunday" class="hidden" type="text" name="sunday")
         input(id="cafe-submit" class="hidden" type="submit" value="add to favorites")
     div(class="best-cafes")
-      h2 Best cafes in #{city}
+      h2 Cafe Suggestions for #{city}
       each cafe in bestCafes
-        div(class="best-cafe-container")
-          h3 #{cafe.name}
-          ul
-            li address #{cafe.formatted_address}
-            li price Level #{cafe.price_level}
-            li rating #{cafe.rating}
-            li website #{cafe.website}
-          ul hours
-            each day in schedules[0].weekday_text
-              li #{day}
+        div(class="cafe-container")
+          h3(class="best-cafe-name") #{cafe.name}
+          div(class="detail-container")
+            div(class="svg phone-svg")
+            p(class="cafe-detail") #{cafe.formatted_phone_number}
+          div(class="detail-container")
+            div(class="svg address-svg")
+            p(class="cafe-detail") #{cafe.formatted_address}
+          div(class="detail-container")
+            div(class="svg web-svg")
+            p(class="cafe-detail") #{cafe.website}
+          div(class="detail-container")
+            div(class="svg hours-svg")
+            p(class="cafe-detail") hours
+            ul(class="best-cafe-hours")
+              each day in schedules[0].weekday_text
+                li #{day}
+          div(class="detail-container")
+            p(class="cafe-detail") price Level #{cafe.price_level}
+            p(class="cafe-detail") rating #{cafe.rating}
+
   div(class="hidden")
     p(id="city-input" class="hidden") #{city}

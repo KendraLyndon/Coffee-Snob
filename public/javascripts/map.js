@@ -108,6 +108,7 @@ function addMarkerListeners(marker){
     this.infowindow.close(map, this);
   });
   marker.addListener('click', function() {
+    $('#selected-cafe-container').slideDown();
     getCoffeeDetails(this.title);
   });
 }

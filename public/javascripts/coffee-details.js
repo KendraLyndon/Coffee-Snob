@@ -1,63 +1,41 @@
 function addCafeToPage(place){
   console.log(place);
-
-  var section = $('#selected-cafe-container'),
-      name = document.createElement('h3'),
-      infoList = document.createElement('ul'),
-      hoursList = document.createElement('ul'),
-      reviews = document.createElement('div'),
-      address = document.createElement('li'),
-      phone = document.createElement('li'),
-      web = document.createElement('li'),
-      price = document.createElement('li'),
-      rating = document.createElement('li'),
-      photo = document.createElement('img');
-
-  $(section).empty();
-  $(name).text(place.name);
-  $(section).append(name);
-
-  //if results came with photos, add one photo to the page
-  if(place.photos){
-    addSrc(place, photo);
-    $(section).append(photo);
-  }
-
-  addToInfoList(place, address, phone, web, price, rating);
-
-  //add opening hours of cafe
-  place.opening_hours.weekday_text.forEach(function(day){
-    var open = document.createElement('li');
-    $(open).text(day);
-    $(hoursList).append(open);
-  });
-
-  addReviews(place, reviews);
-
-  $(infoList).append(address, phone, web, price, rating);
-  $(section).append(infoList, hoursList, reviews);
-
+  updateDetails(place);
+  addHours(place);
+  addReviews(place);
   addCafeToForm(place);
 }
 
-function addToInfoList(place, address, phone, web, price, rating){
-  $(address).text(place.formatted_address);
-  $(phone).text(place.formatted_phone_number);
-  $(web).text(place.website);
-  $(price).text(place.price_level);
-  $(rating).text(place.rating);
+function updateDetails(place){
+  //if results came with photos, add one photo to the page
+  if(place.photos){
+    var src = place.photos[0].getUrl({'maxWidth': 150, 'maxHeight': 150})
+    $('#selected-photo').attr('src',src);
+  };
+
+  $('#selected-name').text(place.name);
+  $('#selected-phone').text(place.formatted_phone_number);
+  $('#selected-address').text(place.formatted_address);
+  $('#selected-web').text(place.website);
+  $('#selected-price').text('price: '+place.price_level);
+  $('#selected-rating').text('rating: '+place.rating);
 }
 
-function addSrc(place, photo){
-  var src = place.photos[0].getUrl({'maxWidth': 150, 'maxHeight': 150})
-  $(photo).attr('src',src);
+function addHours(place){
+  $('#selected-hours').empty();
+  place.opening_hours.weekday_text.forEach(function(day){
+    var open = document.createElement('li');
+    $(open).text(day);
+    $('#selected-hours').append(open);
+  });
 }
 
-function addReviews(place, reviews){
+function addReviews(place){
+  $('#selected-reviews').empty();
   for(var i=0; i<3; i++){
     var review = document.createElement('p');
     $(review).text(place.reviews[i].text);
-    $(reviews).append(review);
+    $('#selected-reviews').append(review);
   }
 }
 
