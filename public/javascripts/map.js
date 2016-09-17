@@ -1,5 +1,6 @@
 var map;
 var geocoder;
+var existingMarkers = [];
 
 function addMap(){
   geocoder = new google.maps.Geocoder();
@@ -76,14 +77,17 @@ function processSearchResults(results, status, pagination){
 
 function addLocalCafe(place,placeId){
   if(!checkIfChain(place.name) && checkIfCafe(place.types)){
-    var marker = new google.maps.Marker({
-      map: map,
-      position: place.geometry.location,
-      title: placeId,
-      icon: 'images/coffee-cup.svg'
-    });
-    addInfoWindow(marker,place);
-    addMarkerListeners(marker);
+    if(!existingMarkers.includes(placeId)){
+      var marker = new google.maps.Marker({
+        map: map,
+        position: place.geometry.location,
+        title: placeId,
+        icon: 'images/coffee-cup.svg'
+      });
+      addInfoWindow(marker,place);
+      addMarkerListeners(marker);
+      existingMarkers.push(placeId);
+    }
   }
 }
 
