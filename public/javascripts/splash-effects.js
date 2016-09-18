@@ -5,7 +5,8 @@ $(document).ready(function(){
       loginForm = $('#login-form'),
       logIn = $('#log-in-btn'),
       signupForm = $('#signup-form'),
-      signUp = $('#signup-btn');
+      signUp = $('#signup-btn'),
+      title = $('.main-title');
 
   $(loginForm).hide();
   $(signupForm).hide();
@@ -19,6 +20,19 @@ $(document).ready(function(){
     $(loginForm).hide();
     $(signupForm).toggle();
   })
+
+  $(title).click(function(){
+    window.location.href='/';
+  })
+
+  title.on('mouseenter',function(){
+    $(this).css('color','#B2417A');
+    $(this).css('border-color','#B2417A');
+  });
+  title.on('mouseleave',function(){
+    $(this).css('color','#eeeeee');
+    $(this).css('border-color','#F2F2F2');
+  });
 
   link.on('mouseenter',function(){
     $(this).css('color','#B2417A');

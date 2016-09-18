@@ -67,4 +67,12 @@ router.get('/logout', function(req, res, next) {
   })
 });
 
+router.get('/about', function(req, res, next) {
+    res.render('about');
+});
+
+router.get('/contact', function(req, res, next) {
+    res.render('contact');
+});
+
 module.exports = router;

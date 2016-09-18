@@ -8,7 +8,7 @@ purpley : #8C5A67
 purple-grey : #8C7474 */
 
 #map {
-  width: 65vw;
+  width: 67vw;
   height: 90vh;
   position: absolute;
   top: 0;
@@ -27,7 +27,7 @@ purple-grey : #8C7474 */
 
 #info{
   padding: 0;
-  width: 510px;
+  width: 465px;
   height: 90vh;
   position: absolute;
   top: 0;
@@ -52,7 +52,7 @@ purple-grey : #8C7474 */
 }
 
 #selected-name {
-  font-size: 37px;
+  font-size: 35px;
   text-align: center;
 }
 
@@ -61,6 +61,7 @@ purple-grey : #8C7474 */
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-bottom: 15px;
 }
 
 .svg {
@@ -115,7 +116,7 @@ purple-grey : #8C7474 */
   box-shadow: 0px 6px 15px -4px #B2417A;
   padding-bottom: 15px;
   text-align: center;
-  font-size: 37px;
+  font-size: 35px;
 }
 
 .expand {
@@ -140,8 +141,12 @@ purple-grey : #8C7474 */
   margin-top: 0;
 }
 
-.e
-
 ul {
   list-style: none;
+}
+
+@media (max-width: 420px){
+  #info{
+    width: 420px;
+  }
 }

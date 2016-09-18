@@ -9,7 +9,7 @@ function addCafeToPage(place){
 function updateDetails(place){
   //if results came with photos, add one photo to the page
   if(place.photos){
-    var src = place.photos[0].getUrl({'maxWidth': 200, 'maxHeight': 200})
+    var src = place.photos[0].getUrl({'maxWidth': 390, 'maxHeight': 200})
     $('#selected-photo').attr('src',src);
   };
 

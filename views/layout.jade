@@ -12,16 +12,16 @@ html
     header
       div(class='top-bar-wrap')
         div(class='title-wrap')
-          h1 COFFEE SNOB
+          h1(class="main-title") COFFEE SNOB
           if loggedIn == true
             h3(class='sub-title') welcome #{userName}
           else
             h3(class='sub-title') support local cafes
         div(class='link-container')
-          if loggedIn == false
-            button(class="header-btn" id="log-in-btn") log in
-          else
+          if loggedIn == true
             a(class="header-btn" href='/favorites') favorite cafes
+          else
+            button(class="header-btn" id="log-in-btn") log in
           if loggedIn === false
             button(class="header-btn" id="signup-btn") sign up
           else
@@ -40,8 +40,8 @@ html
         block content
     footer
       small &copy Kendra Lyndon 2016
-      a(href='google.com') about
-      a(href='google.com') contact us
+      a(href='/about') about
+      a(href='/contact') contact us
     script(src="https://code.jquery.com/jquery-3.0.0.js" integrity="sha256-jrPLZ+8vDxt2FnE1zvZXCkCcebI/C8Dt5xyaQBjxQIo=" crossorigin="anonymous")
     script(type='text/javascript' src='javascripts/splash-effects.js')
     script(type='text/javascript' src='javascripts/search-effects.js')

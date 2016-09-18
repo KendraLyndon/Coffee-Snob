@@ -27,7 +27,7 @@ block content
       div(id="reviews-container")
         p(class="cafe-detail") reviews
         button(class="expand") &#x25BC;
-        div(id="selected-reviews")
+        div(class="reviews")
       div(class="detail-container")
       form(id="cafe-form" class="hidden")
         input(id="cafe-name" class="hidden" type="text" name="name")
@@ -68,6 +68,12 @@ block content
           div(class="detail-container price-rating")
             p(class="cafe-detail") price level: #{cafe.price_level}
             p(class="cafe-detail") rating: #{cafe.rating}
+          div(id="reviews-container")
+            p(class="cafe-detail") reviews
+            button(class="expand") &#x25BC;
+            div(class="reviews")
+              each review in cafe.reviews
+                p "#{review.text}"
 
   div(class="hidden")
     p(id="city-input" class="hidden") #{city}

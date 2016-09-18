@@ -23,7 +23,6 @@ router.post('/', function(req, res, next) {
 router.post('/new', function(req, res, next) {
   Users.add(req.body).then(function(){
     Users.find(req.body).then(function(user){
-      console.log(user);
       req.session.user_id = user.id;
       req.session.user_name = user.user_name;
       res.redirect('/');

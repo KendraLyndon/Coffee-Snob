@@ -1,11 +1,11 @@
 $(document).ready(function(){
   var selectedCafe = $('#selected-cafe-container');
-  var selectedReviews = $('#selected-reviews');
+  var reviews = $('.reviews');
   var hours = $('.cafe-hours');
   var hoursButton = $('.expand');
 
   $(selectedCafe).hide();
-  $(selectedReviews).hide();
+  $(reviews).hide();
   $(hours).hide();
 
   $(hoursButton).click(function(){
