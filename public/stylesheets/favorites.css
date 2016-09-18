@@ -1,0 +1,81 @@
+/*color scheme :
+dark brown (text only) : #713D1A
+brown : #59261B
+greyish : #D8D9D0
+off-white : #F2F2F2
+brighter purpley : #B2417A
+purpley : #8C5A67
+purple-grey : #8C7474 */
+
+.fav-title {
+  text-align: center;
+  font-size: 45px;
+  color: #713D1A;
+}
+
+.all-favorites {
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.favorite {
+  border: 2px solid #B2417A;
+  display: inline-block;
+  margin: 15px;
+  vertical-align: top;
+  height: 260px;
+  width: 400px;
+  position: relative;
+}
+
+.fav-name {
+  padding: 10px;
+  width: 100%;
+  background-color: #8C7474;
+  font-size: 30px;
+  color: #f2f2f2;
+}
+
+.detail-container {
+  margin-bottom: 8px;
+}
+
+.favorite-details {
+  padding: 15px;
+}
+
+.fav-svg {
+  vertical-align: top;
+}
+
+.favorite-detail {
+  display: inline-block;
+  margin-left: 5px;
+  margin-bottom: 0;
+  vertical-align: bottom;
+}
+
+.fav-remove {
+  border: none;
+  color: #f2f2f2;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: #8C7474;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.fav-web {
+  width: 330px;
+  overflow: auto;
+}
+
+@media (max-width: 560px){
+  .all-favorites {
+    width: 100vw;
+  }
+}
