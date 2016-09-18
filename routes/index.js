@@ -5,7 +5,11 @@ var cafes = require('../helpers/cafes');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', {loggedIn: false, userName: null});
+  if(req.session.user_id){
+    res.render('index', {loggedIn: true, userName: req.session.user_name});
+  } else {
+    res.render('index', {loggedIn: false, userName: null});
+  }
 });
 
 router.get('/search', function(req, res, next) {
@@ -21,14 +25,24 @@ router.get('/search', function(req, res, next) {
         var schedules = bestCafes.map(function(cafe){
           return cafe.opening_hours;
         });
-        console.log(schedules);
-        res.render('search',{
-          city:city,
-          bestCafes:bestCafes,
-          schedules:schedules,
-          loggedIn: true,
-          userName: 'Kendra'
-        })
+        console.log(bestCafes[0]);
+        if(req.session.user_id){
+          res.render('search',{
+            city:city,
+            bestCafes:bestCafes,
+            schedules:schedules,
+            loggedIn: true,
+            userName: req.session.user_name
+          })
+        } else {
+          res.render('search',{
+            city:city,
+            bestCafes:bestCafes,
+            schedules:schedules,
+            loggedIn: false,
+            userName: null
+          })
+        }
       }, reason => {
         console.log(reason)
       });
@@ -38,12 +52,19 @@ router.get('/search', function(req, res, next) {
     });
 });
 
-router.post('/search', function(req, res, next) {
-  res.render('search');
+router.get('/favorites', function(req, res, next) {
+  if(req.session.user_id){
+    res.render('favorites', {loggedIn: true,
+      userName: req.session.user_name});
+  } else {
+    res.redirect('/');
+  }
 });
 
-router.get('/favorites', function(req, res, next) {
-  res.render('favorites');
+router.get('/logout', function(req, res, next) {
+  req.session.destroy(function(err){
+    res.redirect('/');
+  })
 });
 
 module.exports = router;
