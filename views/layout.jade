@@ -15,6 +15,8 @@ html
           h1 COFFEE SNOB
           if loggedIn == true
             h3(class='sub-title') welcome #{userName}
+          else
+            h3(class='sub-title') support local cafes
         div(class='link-container')
           if loggedIn == false
             button(class="header-btn" id="log-in-btn") log in
