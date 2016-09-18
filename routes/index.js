@@ -5,7 +5,6 @@ var cafes = require('../helpers/cafes');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  console.log(req.cookies.user_id);
   if(req.cookies.user_id){
     res.render('index', {loggedIn: true, userName: req.cookies.user_name});
   } else {
@@ -57,9 +56,6 @@ router.get('/logout', function(req, res, next) {
   res.clearCookie("user_id");
   res.clearCookie("user_name")
   res.redirect('/');
-  // req.session.destroy(function(err){
-  //   res.redirect('/');
-  // })
 });
 
 router.get('/about', function(req, res, next) {

@@ -43,7 +43,7 @@ block content
         input(id="cafe-friday" class="hidden" type="text" name="friday")
         input(id="cafe-saturday" class="hidden" type="text" name="saturday")
         input(id="cafe-sunday" class="hidden" type="text" name="sunday")
-        input(id="cafe-submit" type="submit" value="add to favorites")
+        input(id="cafe-submit" class="add-fav" type="submit" value="add to favorites")
     div(class="best-cafes")
       h2(class="best-cafes-title") Cafe Suggestions for #{city}
       each cafe in bestCafes
@@ -74,6 +74,20 @@ block content
             div(class="reviews")
               each review in cafe.reviews
                 p "#{review.text}"
-
+          form(action="/favorites" method="post" class="cafe-form sug-form")
+            input(id="cafe-name" class="hidden" type="text" name="name" value=cafe.name)
+            input(id="cafe-address" class="hidden" type="text" name="address" value=cafe.formatted_address)
+            input(id="cafe-phone" class="hidden" type="text" name="phone" value=cafe.formatted_phone_number)
+            input(id="cafe-web" class="hidden" type="text" name="website" value=cafe.website)
+            input(id="cafe-price" class="hidden" type="text" name="price_level" value=cafe.price_level)
+            input(id="cafe-rating" class="hidden" type="text" name="rating" value=cafe.rating)
+            input(id="cafe-monday" class="hidden" type="text" name="monday" value=schedules[0].weekday_text[0])
+            input(id="cafe-tuesday" class="hidden" type="text" name="tuesday" value=schedules[0].weekday_text[1])
+            input(id="cafe-wednesday" class="hidden" type="text" name="wednesday" value=schedules[0].weekday_text[2])
+            input(id="cafe-thursday" class="hidden" type="text" name="thursday" value=schedules[0].weekday_text[3])
+            input(id="cafe-friday" class="hidden" type="text" name="friday" value=schedules[0].weekday_text[4])
+            input(id="cafe-saturday" class="hidden" type="text" name="saturday" value=schedules[0].weekday_text[5])
+            input(id="cafe-sunday" class="hidden" type="text" name="sunday" value=schedules[0].weekday_text[6])
+            input(id="cafe-submit" class="add-fav" type="submit" value="add to favorites")
   div(class="hidden")
     p(id="city-input" class="hidden") #{city}

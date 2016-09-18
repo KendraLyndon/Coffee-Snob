@@ -1,7 +1,6 @@
 var http = require('http');
 var request = require('request');
 var Promise = require('promise');
-// var Chains = require('../models/chains')
 var chains = ['Starbucks','Tully','Peet','Dunkin','Caribou','McCafe',
 'Costa Coffee', 'Tim Horton', 'Top Pot','The Coffee Bean & Tea Leaf',
 'Dunn Bros', "Seattle's Best", 'Coffee Beanery', 'Biggby', 'Gloria Jean',
@@ -28,7 +27,6 @@ module.exports = {
     return findNearbyCafes(loc)
     .then(function(places){
       var cafes = JSON.parse(places).results;
-      console.log(cafes);
       var localCafes = filterChains(cafes);
       var bestCafes = getBestCafeIds(localCafes);
 
@@ -110,29 +108,3 @@ function getBestCafeIds (cafes){
     return a.concat(b.place_id)
   },[])
 }
-
-// function filterChains(cafes){
-//   return new Promise(function (fulfill, reject){
-//   Chains.all().then(
-//
-//       function cb(err, res, body) {
-//         if (!err && res.statusCode == 200) {
-//           fulfill(body);
-//         } else {
-//           reject(err);
-//         }
-//       }
-//     });
-//     function(chains){
-//     var chainsArray = chains.map(function(chain){
-//       return chain.name;
-//     })
-//     var localCafes = cafes.filter(function(cafe){
-//       return !chainsArray.includes(cafe.name)
-//     })
-//     // console.log(cafes[0].name);
-//
-//   }).catch(function(err){
-//     console.log(err);
-//   })
-// }
