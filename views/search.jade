@@ -40,7 +40,7 @@ block content
         input(id="cafe-sunday" class="hidden" type="text" name="sunday")
         input(id="cafe-submit" class="hidden" type="submit" value="add to favorites")
     div(class="best-cafes")
-      h2 Cafe Suggestions for #{city}
+      h2(class="best-cafes-title") Cafe Suggestions for #{city}
       each cafe in bestCafes
         div(class="cafe-container")
           h3(class="best-cafe-name") #{cafe.name}
@@ -56,6 +56,7 @@ block content
           div(class="detail-container")
             div(class="svg hours-svg")
             p(class="cafe-detail") hours
+            button(class="expand-hours") ~
             ul(class="best-cafe-hours")
               each day in schedules[0].weekday_text
                 li #{day}

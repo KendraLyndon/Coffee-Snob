@@ -46,8 +46,8 @@ purple-grey : #8C7474 */
 .svg {
   display: inline-block;
   background-size: contain;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
 }
 
 .phone-svg {
@@ -75,6 +75,10 @@ purple-grey : #8C7474 */
   border: 2px solid #B2417A;
   margin-bottom: 15px;
   padding: 10px;
+}
+
+.best-cafes-title {
+  text-align: center;
 }
 
 .best-cafe-hours {

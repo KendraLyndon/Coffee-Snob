@@ -13,16 +13,17 @@ html
       div(class='top-bar-wrap')
         div(class='title-wrap')
           h1 COFFEE SNOB
-          h3(class='sub-title') support local cafes
+          if loggedIn == true
+            h3(class='sub-title') welcome #{userName}
         div(class='link-container')
           if loggedIn == false
             button(class="header-btn" id="log-in-btn") log in
           else
-            p Welcome #{userName}
+            a(class="header-btn" href='/favorites') favorite cafes
           if loggedIn === false
             button(class="header-btn" id="signup-btn") sign up
           else
-            button(class="header-btn" href='/') log out
+            a(class="header-btn" href='/logout') log out
     main
       form(action='/users' method='post' id='login-form' class='user-form')
         input(type='text' name='user_name' placeholder='user name' class='user-form-input')
