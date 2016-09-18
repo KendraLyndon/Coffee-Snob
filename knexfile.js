@@ -3,7 +3,7 @@ require('dotenv').config({silent: true});
 module.exports = {
   development: {
     client: 'pg',
-    connection: 'postgres://localhost/coffee_development'
+    connection: process.env.DATABASE_URL
   },
   production: {
     client: 'pg',
