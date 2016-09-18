@@ -40,17 +40,17 @@ function addReviews(place){
 }
 
 function addCafeToForm(place){
-  $("input.name").val(place.name);
-  $("input.address").val(place.formatted_address);
-  $("input.phone").val(place.formatted_phone_number);
-  $("input.web").val(place.website);
-  $("input.price").val(place.price_level);
-  $("input.rating").val(place.rating);
-  $("input.monday").val(place.opening_hours.weekday_text[0]);
-  $("input.tuesday").val(place.opening_hours.weekday_text[1]);
-  $("input.wednesday").val(place.opening_hours.weekday_text[2]);
-  $("input.thursday").val(place.opening_hours.weekday_text[3]);
-  $("input.friday").val(place.opening_hours.weekday_text[4]);
-  $("input.saturday").val(place.opening_hours.weekday_text[5]);
-  $("input.sunday").val(place.opening_hours.weekday_text[6]);
+  $("#cafe-name").val(place.name);
+  $("#cafe-address").val(place.formatted_address);
+  $("#cafe-phone").val(place.formatted_phone_number);
+  $("#cafe-web").val(place.website);
+  $("#cafe-price").val(place.price_level);
+  $("#cafe-rating").val(place.rating);
+  $("#cafe-monday").val(place.opening_hours.weekday_text[0]);
+  $("#cafe-tuesday").val(place.opening_hours.weekday_text[1]);
+  $("#cafe-wednesday").val(place.opening_hours.weekday_text[2]);
+  $("#cafe-thursday").val(place.opening_hours.weekday_text[3]);
+  $("#cafe-friday").val(place.opening_hours.weekday_text[4]);
+  $("#cafe-saturday").val(place.opening_hours.weekday_text[5]);
+  $("#cafe-sunday").val(place.opening_hours.weekday_text[6]);
 }

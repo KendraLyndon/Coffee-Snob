@@ -8,13 +8,17 @@ purpley : #8C5A67
 purple-grey : #8C7474 */
 
 #map {
-  width: 67vw;
+  width: 68vw;
   height: 90vh;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1;
   overflow: hidden;
+}
+
+#cafe-submit {
+  display: block !important;
 }
 
 #city-input {

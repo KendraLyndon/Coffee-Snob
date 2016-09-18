@@ -1,4 +1,24 @@
 extends layout
 
 block content
-  div(id='favorites') these are my favorites!
+  h2(class="fav-title") #{userName}'s favorite cafes
+  div(class="all-favorites")
+    each favorite in favorites
+      div(class='favorite')
+        h3(class="cafe-name fav-name") #{favorite.name}
+        div(class="favorite-details")
+          div(class="detail-container")
+            div(class="svg phone-svg")
+            p(class="favorite-detail") #{favorite.phone}
+          div(class="detail-container")
+            div(class="svg address-svg")
+            p(class="favorite-detail") #{favorite.address}
+          div(class="detail-container")
+            div(class="svg web-svg fav-svg")
+            p(class="favorite-detail fav-web") #{favorite.website}
+          div(class="detail-container price-rating")
+            p(class="favorite-detail") price level: #{favorite.price_level}
+            p(class="favorite-detail") rating: #{favorite.rating}
+          form(action='/favorites/delete' method="post")
+            input(type='text' name="fav_id" value=favorite.id class="hidden")
+            input(type="submit" class="fav-remove" value="remove")

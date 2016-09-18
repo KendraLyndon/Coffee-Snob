@@ -9,6 +9,9 @@ module.exports = {
                                 'password':input.password
                               }).first();
   },
+  findById: function(id){
+    return knex('users').where({'id':id}).first();
+  },
   add: function(input){
     return knex('users').insert({
       'user_name':input.user_name,

@@ -8,6 +8,7 @@ html
     link(rel='stylesheet' href="https://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin-ext")
     link(rel='stylesheet', href='/stylesheets/main.css')
     link(rel='stylesheet', href='/stylesheets/search.css')
+    link(rel='stylesheet', href='/stylesheets/favorites.css')
   body
     header
       div(class='top-bar-wrap')
@@ -18,12 +19,14 @@ html
           else
             h3(class='sub-title') support local cafes
         div(class='link-container')
-          if loggedIn == true
+          if loggedIn == true && path === "fav"
+            a(class="header-btn" href='/search?city='+city) map
+          else if loggedIn == true
             a(class="header-btn" href='/favorites') favorite cafes
           else
-            button(class="header-btn" id="log-in-btn") log in
+            button(class="header-btn" class="log-in-btn") log in
           if loggedIn === false
-            button(class="header-btn" id="signup-btn") sign up
+            button(class="header-btn" class="signup-btn") sign up
           else
             a(class="header-btn" href='/logout') log out
     main
@@ -45,6 +48,7 @@ html
     script(src="https://code.jquery.com/jquery-3.0.0.js" integrity="sha256-jrPLZ+8vDxt2FnE1zvZXCkCcebI/C8Dt5xyaQBjxQIo=" crossorigin="anonymous")
     script(type='text/javascript' src='javascripts/splash-effects.js')
     script(type='text/javascript' src='javascripts/search-effects.js')
+    script(type='text/javascript' src='javascripts/favorites.js')
     script(type='text/javascript' src='javascripts/map.js')
     script(type='text/javascript' src='javascripts/coffee-validators.js')
     script(type='text/javascript' src='javascripts/coffee-details.js')

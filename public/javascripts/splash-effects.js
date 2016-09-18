@@ -3,9 +3,9 @@ $(document).ready(function(){
       button = $('.btn'),
       headerButton = $('.header-btn'),
       loginForm = $('#login-form'),
-      logIn = $('#log-in-btn'),
+      logIn = $('.log-in-btn'),
       signupForm = $('#signup-form'),
-      signUp = $('#signup-btn'),
+      signUp = $('.signup-btn'),
       title = $('.main-title');
 
   $(loginForm).hide();
@@ -14,11 +14,15 @@ $(document).ready(function(){
   $(logIn).click(function(){
     $(signupForm).hide();
     $(loginForm).toggle();
+    // $(loginForm).toggleClass('hidden');
+    $(loginForm).addClass('user-form');
   })
 
   $(signUp).click(function(){
     $(loginForm).hide();
     $(signupForm).toggle();
+    // $(signupForm).toggleClass('hidden');
+    $(signupForm).addClass('user-form');
   })
 
   $(title).click(function(){

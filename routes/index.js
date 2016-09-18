@@ -5,8 +5,9 @@ var cafes = require('../helpers/cafes');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  if(req.session.user_id){
-    res.render('index', {loggedIn: true, userName: req.session.user_name});
+  console.log(req.cookies.user_id);
+  if(req.cookies.user_id){
+    res.render('index', {loggedIn: true, userName: req.cookies.user_name});
   } else {
     res.render('index', {loggedIn: false, userName: null});
   }
@@ -25,14 +26,14 @@ router.get('/search', function(req, res, next) {
         var schedules = bestCafes.map(function(cafe){
           return cafe.opening_hours;
         });
-        console.log(bestCafes[0]);
-        if(req.session.user_id){
+        res.cookie('city',city);
+        if(req.cookies.user_id){
           res.render('search',{
             city:city,
             bestCafes:bestCafes,
             schedules:schedules,
             loggedIn: true,
-            userName: req.session.user_name
+            userName: req.cookies.user_name
           })
         } else {
           res.render('search',{
@@ -52,27 +53,29 @@ router.get('/search', function(req, res, next) {
     });
 });
 
-router.get('/favorites', function(req, res, next) {
-  if(req.session.user_id){
-    res.render('favorites', {loggedIn: true,
-      userName: req.session.user_name});
-  } else {
-    res.redirect('/');
-  }
-});
-
 router.get('/logout', function(req, res, next) {
-  req.session.destroy(function(err){
-    res.redirect('/');
-  })
+  res.clearCookie("user_id");
+  res.clearCookie("user_name")
+  res.redirect('/');
+  // req.session.destroy(function(err){
+  //   res.redirect('/');
+  // })
 });
 
 router.get('/about', function(req, res, next) {
-    res.render('about');
+  if(req.cookies.user_id){
+    res.render('about', {loggedIn: true, userName: req.cookies.user_name});
+  } else {
+    res.render('about', {loggedIn: false, userName: null});
+  }
 });
 
 router.get('/contact', function(req, res, next) {
-    res.render('contact');
+  if(req.cookies.user_id){
+    res.render('contact', {loggedIn: true, userName: req.cookies.user_name});
+  } else {
+    res.render('contact', {loggedIn: false, userName: null});
+  }
 });
 
 module.exports = router;

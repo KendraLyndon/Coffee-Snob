@@ -27,9 +27,9 @@ block content
       div(id="reviews-container")
         p(class="cafe-detail") reviews
         button(class="expand") &#x25BC;
-        div(class="reviews")
+        div(class="reviews" id="selected-reviews")
       div(class="detail-container")
-      form(id="cafe-form" class="hidden")
+      form(action="/favorites" method="post" id="cafe-form selected-form")
         input(id="cafe-name" class="hidden" type="text" name="name")
         input(id="cafe-address" class="hidden" type="text" name="address")
         input(id="cafe-phone" class="hidden" type="text" name="phone")
@@ -43,7 +43,7 @@ block content
         input(id="cafe-friday" class="hidden" type="text" name="friday")
         input(id="cafe-saturday" class="hidden" type="text" name="saturday")
         input(id="cafe-sunday" class="hidden" type="text" name="sunday")
-        input(id="cafe-submit" class="hidden" type="submit" value="add to favorites")
+        input(id="cafe-submit" type="submit" value="add to favorites")
     div(class="best-cafes")
       h2(class="best-cafes-title") Cafe Suggestions for #{city}
       each cafe in bestCafes

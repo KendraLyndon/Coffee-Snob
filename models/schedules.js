@@ -1,11 +1,14 @@
 var knex = require('../db/knex');
 
 module.exports = {
-  all: function(input){
+  all: function(){
     return knex('schedules').select();
   },
   find: function(id){
     return knex('schedules').where({'id':id}).first();
+  },
+  findLastestCreated: function(){
+    return knex('schedules').select('id').orderBy('id', 'desc').first();
   },
   add: function(input){
     return knex('schedules').insert({
