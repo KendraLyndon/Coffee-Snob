@@ -4,8 +4,9 @@ block content
   div(id='map')
   div(id='info')
     div(id="selected-cafe-container" class="cafe-container")
-      h3(id="selected-name")
-      img(id="selected-photo")
+      h3(id="selected-name" class="cafe-name")
+      div(class="photo-container")
+        img(id="selected-photo")
       div(class="detail-container")
         div(class="svg phone-svg")
         p(class="cafe-detail" id="selected-phone")
@@ -18,11 +19,15 @@ block content
       div(class="detail-container")
         div(class="svg hours-svg")
         p(class="cafe-detail") hours
-        ul(id="selected-hours")
-      div(class="detail-container")
+        button(class="expand") &#x25BC;
+        ul(id="selected-hours" class="cafe-hours")
+      div(class="detail-container price-rating")
         p(class="cafe-detail" id="selected-price")
         p(class="cafe-detail" id="selected-rating")
-      div(id="selected-reviews")
+      div(id="reviews-container")
+        p(class="cafe-detail") reviews
+        button(class="expand") &#x25BC;
+        div(id="selected-reviews")
       div(class="detail-container")
       form(id="cafe-form" class="hidden")
         input(id="cafe-name" class="hidden" type="text" name="name")
@@ -43,7 +48,7 @@ block content
       h2(class="best-cafes-title") Cafe Suggestions for #{city}
       each cafe in bestCafes
         div(class="cafe-container")
-          h3(class="best-cafe-name") #{cafe.name}
+          h3(class="cafe-name") #{cafe.name}
           div(class="detail-container")
             div(class="svg phone-svg")
             p(class="cafe-detail") #{cafe.formatted_phone_number}
@@ -56,13 +61,13 @@ block content
           div(class="detail-container")
             div(class="svg hours-svg")
             p(class="cafe-detail") hours
-            button(class="expand-hours") ~
-            ul(class="best-cafe-hours")
+            button(class="expand") &#x25BC;
+            ul(class="cafe-hours")
               each day in schedules[0].weekday_text
                 li #{day}
-          div(class="detail-container")
-            p(class="cafe-detail") price Level #{cafe.price_level}
-            p(class="cafe-detail") rating #{cafe.rating}
+          div(class="detail-container price-rating")
+            p(class="cafe-detail") price level: #{cafe.price_level}
+            p(class="cafe-detail") rating: #{cafe.rating}
 
   div(class="hidden")
     p(id="city-input" class="hidden") #{city}

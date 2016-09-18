@@ -26,8 +26,7 @@ purple-grey : #8C7474 */
 }
 
 #info{
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 0;
   width: 510px;
   height: 90vh;
   position: absolute;
@@ -41,6 +40,27 @@ purple-grey : #8C7474 */
 
 #selected-cafe-container {
   margin-top: 15px;
+  border-bottom: 2px solid #B2417A;
+}
+
+#reviews-container {
+  margin-left: 15px;
+}
+
+#selected-reviews {
+  margin-left: 10px;
+}
+
+#selected-name {
+  font-size: 37px;
+  text-align: center;
+}
+
+.photo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .svg {
@@ -71,23 +91,56 @@ purple-grey : #8C7474 */
   margin-left: 10px;
 }
 
+.price-rating {
+  margin-left: 15px;
+}
+
+.block-detail {
+  display: block;
+}
+
 .cafe-container {
-  border: 2px solid #B2417A;
+  border-bottom: 1px solid #B2417A;
   margin-bottom: 15px;
   padding: 10px;
+  padding-left: 25px;
+}
+
+.cafe-container:last-child {
+  border-bottom: none;
+  margin-bottom: 5px;
 }
 
 .best-cafes-title {
+  box-shadow: 0px 6px 15px -4px #B2417A;
+  padding-bottom: 15px;
   text-align: center;
+  font-size: 37px;
 }
 
-.best-cafe-hours {
-  margin-bottom: 0;
+.expand {
+  background: none;
+  border: none;
+  margin-left: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 11px;
+  margin-top: 3px;
+  color: #B2417A;
 }
 
-.best-cafe-name {
+.cafe-hours {
+  margin-bottom: 10px;
+  margin-left: 25px;
+  list-style: none;
+}
+
+.cafe-name {
+  font-size: 28px;
   margin-top: 0;
 }
+
+.e
 
 ul {
   list-style: none;

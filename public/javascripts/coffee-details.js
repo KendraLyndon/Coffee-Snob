@@ -9,7 +9,7 @@ function addCafeToPage(place){
 function updateDetails(place){
   //if results came with photos, add one photo to the page
   if(place.photos){
-    var src = place.photos[0].getUrl({'maxWidth': 150, 'maxHeight': 150})
+    var src = place.photos[0].getUrl({'maxWidth': 200, 'maxHeight': 200})
     $('#selected-photo').attr('src',src);
   };
 
@@ -17,7 +17,7 @@ function updateDetails(place){
   $('#selected-phone').text(place.formatted_phone_number);
   $('#selected-address').text(place.formatted_address);
   $('#selected-web').text(place.website);
-  $('#selected-price').text('price: '+place.price_level);
+  $('#selected-price').text('price level: '+place.price_level);
   $('#selected-rating').text('rating: '+place.rating);
 }
 
@@ -34,7 +34,7 @@ function addReviews(place){
   $('#selected-reviews').empty();
   for(var i=0; i<3; i++){
     var review = document.createElement('p');
-    $(review).text(place.reviews[i].text);
+    $(review).text('"'+place.reviews[i].text+'"');
     $('#selected-reviews').append(review);
   }
 }
