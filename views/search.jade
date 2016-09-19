@@ -69,11 +69,12 @@ block content
             p(class="cafe-detail") price level: #{cafe.price_level}
             p(class="cafe-detail") rating: #{cafe.rating}
           div(id="reviews-container")
-            p(class="cafe-detail") reviews
-            button(class="expand") &#x25BC;
-            div(class="reviews")
-              each review in cafe.reviews
-                p "#{review.text}"
+            if cafe.reviews
+              p(class="cafe-detail") reviews
+              button(class="expand") &#x25BC;
+              div(class="reviews")
+                each review in cafe.reviews
+                  p "#{review.text}"
           form(action="/favorites" method="post" class="cafe-form sug-form")
             input(id="cafe-name" class="hidden" type="text" name="name" value=cafe.name)
             input(id="cafe-address" class="hidden" type="text" name="address" value=cafe.formatted_address)
