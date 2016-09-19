@@ -5,10 +5,17 @@ var Users = require('../models/users');
 
 router.post('/', function(req, res, next) {
   Users.find(req.body).then(function(user){
+    console.log(req.body);
     if(user){
       res.cookie('user_id',user.id);
       res.cookie('user_name',user.user_name);
-      res.redirect('/');
+      if(req.cookies.city){
+        console.log(req.cookies.city);
+        res.redirect(`/search?city=${req.cookies.city}`)
+      }
+      else {
+        res.redirect('/');
+      }
     } else {
       res.redirect('/');
     }

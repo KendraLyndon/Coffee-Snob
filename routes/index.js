@@ -56,7 +56,8 @@ router.get('/search', function(req, res, next) {
 
 router.get('/logout', function(req, res, next) {
   res.clearCookie("user_id");
-  res.clearCookie("user_name")
+  res.clearCookie("user_name");
+  res.clearCookie("city");
   res.redirect('/');
 });
 
