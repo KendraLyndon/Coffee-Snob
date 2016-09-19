@@ -44,6 +44,7 @@ header * {
 .user-form {
   background: rgba(89, 38, 27, 0.9);
   position: absolute;
+  z-index: 10;
   top: 22vh;
   left: 35vw;
   display: flex;
@@ -53,6 +54,7 @@ header * {
 }
 
 .user-form-input {
+  z-index: 10;
   height: 1.5em;
   vertical-align: middle;
   border-radius: 0%;
