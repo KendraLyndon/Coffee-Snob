@@ -14,14 +14,12 @@ $(document).ready(function(){
   $(logIn).click(function(){
     $(signupForm).hide();
     $(loginForm).toggle();
-    // $(loginForm).toggleClass('hidden');
     $(loginForm).addClass('user-form');
   })
 
   $(signUp).click(function(){
     $(loginForm).hide();
     $(signupForm).toggle();
-    // $(signupForm).toggleClass('hidden');
     $(signupForm).addClass('user-form');
   })
 
