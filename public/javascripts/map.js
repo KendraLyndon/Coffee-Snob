@@ -18,7 +18,7 @@ function createMapWithListeners(center){
   map = new google.maps.Map(document.getElementById('map'), {
     center: center,
     scrollwheel: true,
-    zoom: 9
+    zoom: 12
   });
   findCoffee(center, 9);
   addMapListeners();
