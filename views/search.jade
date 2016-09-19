@@ -43,7 +43,7 @@ block content
         input(id="cafe-friday" class="hidden" type="text" name="friday")
         input(id="cafe-saturday" class="hidden" type="text" name="saturday")
         input(id="cafe-sunday" class="hidden" type="text" name="sunday")
-        input(id="cafe-submit" class="add-fav" type="submit" value="add to favorites")
+        input(id="cafe-submit" class="add-fav pink-hvr" type="submit" value="add to favorites")
     div(class="best-cafes")
       h2(class="best-cafes-title") Cafe Suggestions for #{city}
       each cafe in bestCafes
@@ -94,6 +94,6 @@ block content
             input(id="cafe-friday" class="hidden" type="text" name="friday" value=schedules[0].weekday_text[4])
             input(id="cafe-saturday" class="hidden" type="text" name="saturday" value=schedules[0].weekday_text[5])
             input(id="cafe-sunday" class="hidden" type="text" name="sunday" value=schedules[0].weekday_text[6])
-            input(id="cafe-submit" class="add-fav" type="submit" value="add to favorites")
+            input(id="cafe-submit" class="add-fav pink-hvr" type="submit" value="add to favorites")
   div(class="hidden")
     p(id="city-input" class="hidden") #{city}

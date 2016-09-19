@@ -27,6 +27,7 @@ purple-grey : #8C7474 */
   height: 260px;
   width: 400px;
   position: relative;
+  border-radius: 3px;
 }
 
 .fav-name {

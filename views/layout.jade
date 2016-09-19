@@ -18,6 +18,10 @@ html
             h3(class='sub-title') welcome #{userName}
           else
             h3(class='sub-title') support local cafes
+        if path === "map" || path === "fav"
+          form(action="/search" method="get")
+            input(type='text' class='city' name='city' placeholder='enter city name')
+            input(type='submit' class='city-submit-hdr pink-hvr' value='find cafes')
         div(class='link-container')
           if loggedIn == true && path === "fav"
             a(class="header-btn" href='/search?city='+city) map

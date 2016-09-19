@@ -47,6 +47,18 @@ purple-grey : #8C7474 */
   border-bottom: 2px solid #B2417A;
 }
 
+.add-fav {
+  border: none;
+  background-color: #8C5A67;
+  font-size: 17px;
+  color: #f2f2f2;
+  border-radius: 2px;
+  padding: 3px;
+  margin: 10px 0 0 25px;
+}
+
+
+
 #reviews-container {
   margin-left: 15px;
 }
@@ -56,8 +68,14 @@ purple-grey : #8C7474 */
 }
 
 #selected-name {
-  font-size: 35px;
+  box-shadow: 0px 6px 15px -4px #59261B;
+  padding-bottom: 15px;
   text-align: center;
+  font-size: 35px;
+}
+
+img {
+  border-radius: 2px;
 }
 
 .photo-container {
@@ -94,6 +112,8 @@ purple-grey : #8C7474 */
 .cafe-detail {
   display: inline-block;
   margin-left: 10px;
+  margin-bottom: 2px;
+  max-width: 300px !important;
 }
 
 .price-rating {
@@ -106,8 +126,8 @@ purple-grey : #8C7474 */
 
 .cafe-container {
   border-bottom: 1px solid #B2417A;
-  margin-bottom: 15px;
-  padding: 10px;
+  margin-top: 15px;
+  padding: 0 10px 15px 15px;
   padding-left: 25px;
 }
 
@@ -117,7 +137,7 @@ purple-grey : #8C7474 */
 }
 
 .best-cafes-title {
-  box-shadow: 0px 6px 15px -4px #B2417A;
+  box-shadow: 0px 6px 15px -4px #59261B;
   padding-bottom: 15px;
   text-align: center;
   font-size: 35px;
@@ -142,8 +162,9 @@ purple-grey : #8C7474 */
 
 .cafe-name {
   font-size: 28px;
-  margin-top: 0;
+  margin: 0 0 15px;
 }
+
 
 ul {
   list-style: none;

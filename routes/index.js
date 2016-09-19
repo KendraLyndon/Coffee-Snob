@@ -31,6 +31,7 @@ router.get('/search', function(req, res, next) {
             city:city,
             bestCafes:bestCafes,
             schedules:schedules,
+            path:"map",
             loggedIn: true,
             userName: req.cookies.user_name
           })
@@ -39,6 +40,7 @@ router.get('/search', function(req, res, next) {
             city:city,
             bestCafes:bestCafes,
             schedules:schedules,
+            path:"map",
             loggedIn: false,
             userName: null
           })

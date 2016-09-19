@@ -27,6 +27,14 @@ $(document).ready(function(){
     window.location.href='/';
   })
 
+  $('.pink-hvr').on('mouseenter',function(){
+    $(this).css('background-color','#B2417A');
+  });
+
+  $('.pink-hvr').on('mouseleave',function(){
+    $(this).css('background-color','#8C5A67');
+  });
+
   title.on('mouseenter',function(){
     $(this).css('color','#B2417A');
     $(this).css('border-color','#B2417A');
