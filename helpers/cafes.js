@@ -63,7 +63,7 @@ function filterChains(cafes){
     "Wetzel's Pretzels", 'Corner Bakery', 'Perkins', 'Great Harvest', 'Atlanta Bread Company',
     'La Brea', 'Big Apple Bagels', 'Yum-Yum Donuts', "LaMar's Donuts", "Noah's Bagels",
     'House of Bread','Teavana','Argo','Barnes and Noble',"Specialty's Cafe & Bakery"];
-    return !chains.includes(cafe.name)
+    return chains.indexOf(cafe.name) == -1;
   })
 }
 
