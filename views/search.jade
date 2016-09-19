@@ -50,14 +50,17 @@ block content
         div(class="cafe-container")
           h3(class="cafe-name") #{cafe.name}
           div(class="detail-container")
-            div(class="svg phone-svg")
-            p(class="cafe-detail") #{cafe.formatted_phone_number}
+            if cafe.formatted_phone_number
+              div(class="svg phone-svg")
+              p(class="cafe-detail") #{cafe.formatted_phone_number}
           div(class="detail-container")
-            div(class="svg address-svg")
-            p(class="cafe-detail") #{cafe.formatted_address}
+            if cafe.formatted_address
+              div(class="svg address-svg")
+              p(class="cafe-detail") #{cafe.formatted_address}
           div(class="detail-container")
-            div(class="svg web-svg")
-            p(class="cafe-detail") #{cafe.website}
+            if cafe.website
+              div(class="svg web-svg")
+              p(class="cafe-detail") #{cafe.website}
           div(class="detail-container")
             div(class="svg hours-svg")
             p(class="cafe-detail") hours
@@ -66,8 +69,10 @@ block content
               each day in schedules[0].weekday_text
                 li #{day}
           div(class="detail-container price-rating")
-            p(class="cafe-detail") price level: #{cafe.price_level}
-            p(class="cafe-detail") rating: #{cafe.rating}
+            if cafe.price_level
+              p(class="cafe-detail") price level: #{cafe.price_level}
+            if cafe.rating
+              p(class="cafe-detail") rating: #{cafe.rating}
           div(id="reviews-container")
             if cafe.reviews
               p(class="cafe-detail") reviews
