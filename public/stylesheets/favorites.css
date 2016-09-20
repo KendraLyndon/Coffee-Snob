@@ -75,8 +75,12 @@ purple-grey : #8C7474 */
   overflow: auto;
 }
 
-@media (max-width: 560px){
+@media (max-width: 440px){
   .all-favorites {
     width: 100vw;
+  }
+  .favorite {
+    width: 100vw;
+    margin-left: 0;
   }
 }
