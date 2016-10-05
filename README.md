@@ -1,4 +1,3 @@
-issues:
+# Coffee Snob
 
-when user logs in/signs up from map page, user is redirected to splash
-  - fix : need to redirect to 
+Web-based app where users can find local coffee shops in their city and save their favorite cafes to their account.
