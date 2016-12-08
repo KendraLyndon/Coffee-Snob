@@ -1,12 +1,3 @@
-/*color scheme :
-dark brown (text only) : #713D1A
-brown : #59261B
-greyish : #D8D9D0
-off-white : #F2F2F2
-brighter purpley : #B2417A
-purpley : #8C5A67
-purple-grey : #8C7474 */
-
 #map {
   width: 68vw;
   height: 90vh;
@@ -15,22 +6,18 @@ purple-grey : #8C7474 */
   top: 0;
   left: 0;
   z-index: 1;
-  overflow: hidden;
-}
+  overflow: hidden; }
 
 #cafe-submit {
-  display: block !important;
-}
+  display: block !important; }
 
 #city-input {
-  display: none;
-}
+  display: none; }
 
 .info-window, .info-window > p {
-  color: black;
-}
+  color: black; }
 
-#info{
+#info {
   padding: 0;
   width: 465px;
   height: 90vh;
@@ -38,20 +25,18 @@ purple-grey : #8C7474 */
   top: 0;
   right: 0;
   z-index: 2;
-  background-color: #f2f2f2;
+  background-color: white;
   overflow-y: auto;
-  box-shadow: 4px 0px 15px 4px #33190B;
-}
+  box-shadow: 4px 0px 15px 4px #33190B; }
 
 #selected-cafe-container {
+  display: none;
   margin-top: 15px;
-  border-bottom: 2px solid #B2417A;
-}
+  border-bottom: 2px solid #B2417A; }
 
 #selected-photo {
   border-radius: 2px;
-  box-shadow: 0px 6px 15px -4px #59261B;
-}
+  box-shadow: 0px 6px 15px -4px #59261B; }
 
 .add-fav {
   border: none;
@@ -60,94 +45,78 @@ purple-grey : #8C7474 */
   color: #f2f2f2;
   border-radius: 2px;
   padding: 3px;
-  margin: 10px 0 0 25px;
-}
+  margin: 10px 0 0 25px; }
 
-
+.reviews {
+  display: none; }
 
 #reviews-container {
-  margin-left: 15px;
-}
+  margin-left: 15px; }
 
 #selected-reviews {
-  margin-left: 10px;
-}
+  margin-left: 10px; }
 
 #selected-name {
   box-shadow: 0px 6px 15px -4px #59261B;
   padding-bottom: 15px;
   text-align: center;
-  font-size: 35px;
-}
+  font-size: 35px; }
 
 img {
-  border-radius: 2px;
-}
+  border-radius: 2px; }
 
 .photo-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-bottom: 15px;
-}
+  margin-bottom: 15px; }
 
 .svg {
   display: inline-block;
   background-size: contain;
   width: 15px;
-  height: 15px;
-}
+  height: 15px; }
 
 .phone-svg {
-  background-image: url("../images/phone-receiver.svg");
-}
+  background-image: url("../images/phone-receiver.svg"); }
 
 .address-svg {
-  background-image: url("../images/location-pin.svg");
-}
+  background-image: url("../images/location-pin.svg"); }
 
 .web-svg {
-  background-image: url("../images/internet.svg");
-}
+  background-image: url("../images/internet.svg"); }
 
 .hours-svg {
-  background-image: url("../images/clock.svg");
-}
+  background-image: url("../images/clock.svg"); }
 
 .cafe-detail {
   display: inline-block;
   margin-left: 10px;
   margin-bottom: 2px;
-  max-width: 300px !important;
-}
+  max-width: 300px !important; }
 
 .price-rating {
-  margin-left: 15px;
-}
+  margin-left: 15px; }
 
 .block-detail {
-  display: block;
-}
+  display: block; }
 
 .cafe-container {
   border-bottom: 1px solid #B2417A;
   margin-top: 15px;
   padding: 0 10px 15px 15px;
-  padding-left: 25px;
-}
+  padding-left: 25px; }
 
 .cafe-container:last-child {
   border-bottom: none;
-  margin-bottom: 5px;
-}
+  margin-bottom: 5px; }
 
 .best-cafes-title {
   box-shadow: 0px 6px 15px -4px #59261B;
   padding-bottom: 15px;
   text-align: center;
-  font-size: 35px;
-}
+  font-size: 35px; }
 
 .expand {
   background: none;
@@ -157,26 +126,23 @@ img {
   padding-right: 5px;
   font-size: 11px;
   margin-top: 3px;
-  color: #B2417A;
-}
+  color: #B2417A; }
 
 .cafe-hours {
+  display: none;
   margin-bottom: 10px;
   margin-left: 25px;
-  list-style: none;
-}
+  list-style: none; }
 
 .cafe-name {
   font-size: 28px;
-  margin: 0 0 15px;
-}
+  margin: 0 0 15px; }
 
 ul {
-  list-style: none;
-}
+  list-style: none; }
 
-@media (max-width: 420px){
-  #info{
-    width: 420px;
-  }
-}
+@media (max-width: 420px) {
+  #info {
+    width: 420px; } }
+
+/*# sourceMappingURL=search.css.map */

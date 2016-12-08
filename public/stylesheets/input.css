@@ -1,0 +1,444 @@
+.fav-title {
+  text-align: center;
+  font-size: 45px;
+  color: #713D1A; }
+
+.all-favorites {
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto; }
+
+.favorite {
+  border: 2px solid #B2417A;
+  display: inline-block;
+  margin: 15px;
+  vertical-align: top;
+  height: 260px;
+  width: 400px;
+  position: relative;
+  border-radius: 3px; }
+
+.fav-name {
+  padding: 10px;
+  width: 100%;
+  background-color: #8C7474;
+  font-size: 30px;
+  color: #F2F2F2; }
+
+.detail-container {
+  margin-bottom: 8px; }
+
+.favorite-details {
+  padding: 15px; }
+
+.fav-svg {
+  vertical-align: top; }
+
+.favorite-detail {
+  display: inline-block;
+  margin-left: 5px;
+  margin-bottom: 0;
+  vertical-align: bottom; }
+
+.fav-remove {
+  border: none;
+  color: #F2F2F2;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: #8C7474;
+  position: absolute;
+  bottom: 10px;
+  right: 10px; }
+
+.fav-web {
+  width: 330px;
+  overflow: auto; }
+
+@media (max-width: 440px) {
+  .all-favorites {
+    width: 100vw; }
+
+  .favorite {
+    width: 100vw;
+    margin-left: 0; } }
+#map {
+  width: 68vw;
+  height: 90vh;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  overflow: hidden; }
+
+#cafe-submit {
+  display: block !important; }
+
+#city-input {
+  display: none; }
+
+.info-window, .info-window > p {
+  color: black; }
+
+#info {
+  padding: 0;
+  width: 465px;
+  height: 90vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  background-color: white;
+  overflow-y: auto;
+  box-shadow: 4px 0px 15px 4px #33190B; }
+
+#selected-cafe-container {
+  display: none;
+  margin-top: 15px;
+  border-bottom: 2px solid #B2417A; }
+
+#selected-photo {
+  border-radius: 2px;
+  box-shadow: 0px 6px 15px -4px #59261B; }
+
+.add-fav {
+  border: none;
+  background-color: #8C5A67;
+  font-size: 17px;
+  color: #f2f2f2;
+  border-radius: 2px;
+  padding: 3px;
+  margin: 10px 0 0 25px; }
+
+.reviews {
+  display: none; }
+
+#reviews-container {
+  margin-left: 15px; }
+
+#selected-reviews {
+  margin-left: 10px; }
+
+#selected-name {
+  box-shadow: 0px 6px 15px -4px #59261B;
+  padding-bottom: 15px;
+  text-align: center;
+  font-size: 35px; }
+
+img {
+  border-radius: 2px; }
+
+.photo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px; }
+
+.svg {
+  display: inline-block;
+  background-size: contain;
+  width: 15px;
+  height: 15px; }
+
+.phone-svg {
+  background-image: url("../images/phone-receiver.svg"); }
+
+.address-svg {
+  background-image: url("../images/location-pin.svg"); }
+
+.web-svg {
+  background-image: url("../images/internet.svg"); }
+
+.hours-svg {
+  background-image: url("../images/clock.svg"); }
+
+.cafe-detail {
+  display: inline-block;
+  margin-left: 10px;
+  margin-bottom: 2px;
+  max-width: 300px !important; }
+
+.price-rating {
+  margin-left: 15px; }
+
+.block-detail {
+  display: block; }
+
+.cafe-container {
+  border-bottom: 1px solid #B2417A;
+  margin-top: 15px;
+  padding: 0 10px 15px 15px;
+  padding-left: 25px; }
+
+.cafe-container:last-child {
+  border-bottom: none;
+  margin-bottom: 5px; }
+
+.best-cafes-title {
+  box-shadow: 0px 6px 15px -4px #59261B;
+  padding-bottom: 15px;
+  text-align: center;
+  font-size: 35px; }
+
+.expand {
+  background: none;
+  border: none;
+  margin-left: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 11px;
+  margin-top: 3px;
+  color: #B2417A; }
+
+.cafe-hours {
+  display: none;
+  margin-bottom: 10px;
+  margin-left: 25px;
+  list-style: none; }
+
+.cafe-name {
+  font-size: 28px;
+  margin: 0 0 15px; }
+
+ul {
+  list-style: none; }
+
+@media (max-width: 420px) {
+  #info {
+    width: 420px; } }
+* {
+  margin: 0;
+  padding: 0;
+  color: #713D1A;
+  font-family: 'Open Sans', sans-serif; }
+
+header {
+  width: 100%;
+  height: 75px;
+  position: relative;
+  z-index: 10;
+  background-color: #713D1A;
+  box-shadow: 4px 0px 15px 4px #33190B; }
+
+.top-bar-wrap {
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; }
+
+header * {
+  display: inline-block; }
+
+.hidden {
+  display: none; }
+
+.user-form {
+  background: rgba(89, 38, 27, 0.9);
+  position: absolute;
+  z-index: 10;
+  top: 22vh;
+  left: 35vw;
+  display: none;
+  flex-direction: column;
+  padding: 30px;
+  border: 2px solid #F2F2F2; }
+
+.user-form-input {
+  z-index: 10;
+  height: 1.5em;
+  vertical-align: middle;
+  border-radius: 0%;
+  border: 2px solid #713D1A;
+  text-align: center;
+  font-size: 45px;
+  margin-bottom: 15px;
+  color: #713D1A;
+  background-color: #F2F2F2; }
+
+.user-form-submit {
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #713D1A;
+  width: 230px;
+  height: 1.5em;
+  border-radius: 0%;
+  border: 2px solid #F2F2F2;
+  text-align: center;
+  font-size: 45px;
+  color: #F2F2F2; }
+
+input {
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  font-size: 20px;
+  margin-left: 8px;
+  color: #713D1A;
+  background-color: white; }
+
+.city {
+  height: 1.5em;
+  border: none;
+  border-radius: 2px 0 0 2px;
+  vertical-align: middle; }
+
+.city-submit-hdr {
+  margin-left: 0;
+  vertical-align: middle;
+  height: 1.5em;
+  border: none;
+  background-color: #8C5A67;
+  color: #F2F2F2;
+  border-radius: 0 2px 2px 0;
+  padding: 3px 6px 3px 6px; }
+
+#city {
+  height: 1.5em;
+  vertical-align: middle;
+  background: rgba(250, 250, 250, 0.2);
+  border-radius: 0%;
+  border: 2px solid #F2F2F2;
+  border-right: 1px solid #F2F2F2;
+  text-align: center;
+  font-size: 45px;
+  color: #F2F2F2; }
+
+#city-submit {
+  padding: 0;
+  margin-left: 0;
+  background-color: #713D1A;
+  width: 230px;
+  height: 1.5em;
+  border-radius: 0%;
+  border: 2px solid #F2F2F2;
+  border-left: 1px solid #F2F2F2;
+  text-align: center;
+  font-size: 45px;
+  color: #F2F2F2; }
+
+#city-submit:hover {
+  background-color: #8C5A67; }
+
+.link-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+a {
+  display: block;
+  text-decoration: none !important;
+  color: #F2F2F2;
+  margin-bottom: 5px;
+  margin-left: 15px;
+  text-align: right;
+  font-size: 18px; }
+
+a:hover {
+  color: #B2417A; }
+
+.header-btn {
+  font-family: 'Lato', sans-serif;
+  display: block;
+  text-decoration: none !important;
+  color: #F2F2F2;
+  background: none;
+  border: none;
+  margin-bottom: 5px;
+  margin-left: 15px;
+  text-align: right;
+  font-size: 20px; }
+
+.header-btn:hover {
+  color: #B2417A; }
+
+.greeting {
+  font-family: 'Lato', sans-serif;
+  display: block;
+  color: #F2F2F2;
+  text-align: right;
+  font-size: 20px; }
+
+.main-title {
+  margin: 0; }
+
+.title-link {
+  font-family: 'Lato', sans-serif;
+  color: #F2F2F2;
+  margin-top: 10px;
+  font-size: 65px;
+  margin: 0; }
+
+.sub-title {
+  font-family: 'Lato', sans-serif;
+  color: #F2F2F2;
+  font-size: 25px;
+  margin-left: 30px;
+  font-weight: lighter; }
+
+main {
+  min-height: 90vh;
+  position: relative;
+  top: 0;
+  left: 0; }
+
+#entry {
+  width: 100%;
+  height: 90vh;
+  background-image: url("../images/restaurant-beans-coffee-cup-large.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+footer {
+  color: #F2F2F2;
+  width: 100%;
+  height: 5vh;
+  background-color: #59261B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 0; }
+
+small {
+  flex-grow: 2;
+  font-size: 14px;
+  margin-left: 10px; }
+
+.final-footer-link {
+  margin-right: 10px; }
+
+footer > * {
+  color: #F2F2F2;
+  font-family: 'Lato', sans-serif; }
+
+@media (max-width: 980px) {
+  .title-wrap > h3 {
+    display: none; } }
+@media (max-width: 820px) {
+  #entry > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 150px; }
+
+  .city, .city-submit-hdr {
+    display: none; } }
+@media (max-width: 560px) {
+  .link-container > * {
+    display: none !important; }
+
+  #city {
+    width: 300px; } }
+
+/*# sourceMappingURL=input.css.map */

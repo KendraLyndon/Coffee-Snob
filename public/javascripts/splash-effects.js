@@ -1,67 +1,29 @@
 $(document).ready(function(){
-  var link = $('a'),
-      button = $('.btn'),
-      headerButton = $('.header-btn'),
-      loginForm = $('#login-form'),
-      logIn = $('.log-in-btn'),
+  var loginForm = $('#login-form'),
       signupForm = $('#signup-form'),
-      signUp = $('.signup-btn'),
-      title = $('.main-title');
+      logIn = $('.log-in-btn'),
+      signUp = $('.signup-btn');
 
-  $(loginForm).hide();
-  $(signupForm).hide();
-
+//when login button is clicked, show login form and make sure
+//signup form is hidden
   $(logIn).click(function(){
-    $(signupForm).hide();
-    $(loginForm).toggle();
-    $(loginForm).addClass('user-form');
+    $(signupForm).css("display","none");
+    if($(loginForm).css("display")==="none"){
+      $(loginForm).css("display", "flex");
+    } else {
+      $(loginForm).css("display", "none");
+    }
   })
 
+//when login button is clicked, show login form and make sure
+//signup form is hidden
   $(signUp).click(function(){
-    $(loginForm).hide();
-    $(signupForm).toggle();
-    $(signupForm).addClass('user-form');
+    $(loginForm).css("display","none");
+    if($(signupForm).css("display")==="none"){
+      $(signupForm).css("display", "flex");
+    } else {
+      $(signupForm).css("display", "none");
+    }
   })
 
-  $(title).click(function(){
-    window.location.href='/';
-  })
-
-  $('.pink-hvr').on('mouseenter',function(){
-    $(this).css('background-color','#B2417A');
-  });
-
-  $('.pink-hvr').on('mouseleave',function(){
-    $(this).css('background-color','#8C5A67');
-  });
-
-  title.on('mouseenter',function(){
-    $(this).css('color','#B2417A');
-    $(this).css('border-color','#B2417A');
-  });
-  title.on('mouseleave',function(){
-    $(this).css('color','#eeeeee');
-    $(this).css('border-color','#F2F2F2');
-  });
-
-  link.on('mouseenter',function(){
-    $(this).css('color','#B2417A');
-    $(this).css('border-color','#B2417A');
-  });
-  link.on('mouseleave',function(){
-    $(this).css('color','#eeeeee');
-    $(this).css('border-color','#F2F2F2');
-  })
-  headerButton.on('mouseenter',function(){
-    $(this).css('color','#B2417A');
-  });
-  headerButton.on('mouseleave',function(){
-    $(this).css('color','#F2F2F2');
-  })
-  button.on('mouseenter',function(){
-    $(this).css('background-color','#8C5A67');
-  });
-  button.on('mouseleave',function(){
-    $(this).css('background-color','#59261B');
-  })
 })

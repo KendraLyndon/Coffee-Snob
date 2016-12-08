@@ -108,7 +108,6 @@ function addMarkerListeners(marker){
     this.infowindow.close(map, this);
   });
   marker.addListener('click', function() {
-    $('#selected-cafe-container').slideDown();
     getCoffeeDetails(this.title);
   });
 }
@@ -120,7 +119,8 @@ function getCoffeeDetails(id){
   service = new google.maps.places.PlacesService(map);
   service.getDetails(request, function (place, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
-      addCafeToPage(place);
+      toggleCafe(place); // make cafe appear in info bar (search-effects.js)
+      addCafeToPage(place); // coffee-details.js
     }
   })
 }

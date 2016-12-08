@@ -1,5 +1,4 @@
 function addCafeToPage(place){
-  console.log(place);
   updateDetails(place);
   addHours(place);
   addReviews(place);

@@ -7,14 +7,13 @@ html
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Lato:100')
     link(rel='stylesheet' href="https://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin-ext")
-    link(rel='stylesheet', href='/stylesheets/main.css')
-    link(rel='stylesheet', href='/stylesheets/search.css')
-    link(rel='stylesheet', href='/stylesheets/favorites.css')
+    link(rel='stylesheet', href='/stylesheets/input.css')
   body
     header
       div(class='top-bar-wrap')
         div(class='title-wrap')
-          h1(class="main-title") COFFEE SNOB
+          h1(class="main-title") 
+            a(class="title-link" href="/") COFFEE SNOB
           if loggedIn == true
             h3(class='sub-title') hi, #{userName}
           else
@@ -53,7 +52,6 @@ html
     script(src="https://code.jquery.com/jquery-3.0.0.js" integrity="sha256-jrPLZ+8vDxt2FnE1zvZXCkCcebI/C8Dt5xyaQBjxQIo=" crossorigin="anonymous")
     script(type='text/javascript' src='javascripts/splash-effects.js')
     script(type='text/javascript' src='javascripts/search-effects.js')
-    script(type='text/javascript' src='javascripts/favorites.js')
     script(type='text/javascript' src='javascripts/map.js')
     script(type='text/javascript' src='javascripts/coffee-validators.js')
     script(type='text/javascript' src='javascripts/coffee-details.js')
