@@ -4,26 +4,18 @@ $(document).ready(function(){
       logIn = $('.log-in-btn'),
       signUp = $('.signup-btn');
 
-//when login button is clicked, show login form and make sure
+//when login button is clicked, toggle show login form and make sure
 //signup form is hidden
   $(logIn).click(function(){
-    $(signupForm).css("display","none");
-    if($(loginForm).css("display")==="none"){
-      $(loginForm).css("display", "flex");
-    } else {
-      $(loginForm).css("display", "none");
-    }
+    $(signupForm).addClass("hidden");
+    $(loginForm).toggleClass("hidden");
   })
 
-//when login button is clicked, show login form and make sure
-//signup form is hidden
+//when signup button is clicked, toggle show signup form and make sure
+//login form is hidden
   $(signUp).click(function(){
-    $(loginForm).css("display","none");
-    if($(signupForm).css("display")==="none"){
-      $(signupForm).css("display", "flex");
-    } else {
-      $(signupForm).css("display", "none");
-    }
+    $(loginForm).addClass("hidden");
+    $(signupForm).toggleClass("hidden");
   })
 
 })
