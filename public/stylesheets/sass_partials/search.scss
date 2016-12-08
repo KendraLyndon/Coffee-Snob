@@ -1,4 +1,4 @@
-$darkbrown: #713D1A;
+$darkbrown: rgb(89, 38, 27);
 $brown: #59261B;
 $greyish : #D8D9D0;
 $off-white : #F2F2F2;
@@ -44,8 +44,14 @@ $purple-grey : #8C7474;
 
 #selected-cafe-container {
   display: none;
-  margin-top: 15px;
-  border-bottom: 2px solid $bright-purpley;
+  margin: 0;
+  width: 100%;
+  border-bottom: 2px solid $darkbrown;
+  padding: 0;
+}
+
+.deets-container {
+  padding: 0 15px 15px 15px;
 }
 
 #selected-photo {
@@ -77,9 +83,11 @@ $purple-grey : #8C7474;
 
 #selected-name {
   box-shadow: 0px 6px 15px -4px #59261B;
-  padding-bottom: 15px;
   text-align: center;
   font-size: 35px;
+  margin: 0;
+  padding: 15px 0 15px 0;
+  width: 100%;
 }
 
 img {
@@ -91,7 +99,7 @@ img {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-bottom: 15px;
+  margin: 15px 0 15px 0;
 }
 
 .svg {
@@ -133,7 +141,7 @@ img {
 }
 
 .cafe-container {
-  border-bottom: 1px solid #B2417A;
+  border-bottom: 1px solid $darkbrown;
   margin-top: 15px;
   padding: 0 10px 15px 15px;
   padding-left: 25px;
@@ -146,9 +154,10 @@ img {
 
 .best-cafes-title {
   box-shadow: 0px 6px 15px -4px #59261B;
-  padding-bottom: 15px;
   text-align: center;
   font-size: 35px;
+  margin: 0;
+  padding: 15px 0 15px 0;
 }
 
 .expand {
