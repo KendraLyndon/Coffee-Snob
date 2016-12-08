@@ -185,7 +185,9 @@ img {
   margin-bottom: 5px; }
 
 .best-cafes-title {
-  box-shadow: 0px 6px 15px -4px #59261B;
+  background-color: #8C5A67;
+  color: white;
+  font-family: 'Lato', sans-serif;
   text-align: center;
   font-size: 35px;
   margin: 0;
@@ -245,6 +247,10 @@ header {
 
 header * {
   display: inline-block; }
+
+.header-search {
+  align-self: flex-end;
+  padding-bottom: 13px; }
 
 .user-form {
   position: absolute;
@@ -308,7 +314,7 @@ input {
   background-color: #8C5A67;
   color: #F2F2F2;
   border-radius: 0 2px 2px 0;
-  padding: 3px 6px 3px 6px; }
+  padding: 1px 6px 3px 6px; }
 
 #city {
   height: 1.5em;
@@ -434,6 +440,9 @@ footer > * {
   color: #F2F2F2;
   font-family: 'Lato', sans-serif; }
 
+@media (max-width: 1050px) {
+  .header-search {
+    display: none; } }
 @media (max-width: 980px) {
   .title-wrap > h3 {
     display: none; }

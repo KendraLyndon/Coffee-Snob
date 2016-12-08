@@ -43,6 +43,11 @@ header * {
   display: inline-block;
 }
 
+.header-search {
+  align-self: flex-end;
+  padding-bottom: 13px;
+}
+
 .user-form {
   position: absolute;
   top: 25%;
@@ -110,7 +115,7 @@ input {
   background-color: $purpley;
   color: $off-white;
   border-radius: 0 2px 2px 0;
-  padding: 3px 6px 3px 6px;
+  padding: 1px 6px 3px 6px;
 }
 
 #city {
@@ -253,6 +258,12 @@ small {
 footer > * {
   color: $off-white;
   font-family: 'Lato', sans-serif;
+}
+
+@media (max-width: 1050px){
+  .header-search {
+    display: none;
+  }
 }
 
 @media (max-width: 980px){

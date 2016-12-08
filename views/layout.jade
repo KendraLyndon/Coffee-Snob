@@ -20,7 +20,7 @@ html
           else
             h3(class='sub-title') support local cafes
         if path === "map" || path === "fav"
-          form(action="/search" method="get")
+          form(class="header-search" action="/search" method="get")
             input(type='text' class='city' name='city' placeholder='enter city name')
             input(type='submit' class='city-submit-hdr pink-hvr' value='find cafes')
         div(class='link-container')
