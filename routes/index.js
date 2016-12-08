@@ -14,8 +14,8 @@ router.get('/', function(req, res, next) {
 
 router.get('/search', function(req, res, next) {
 
-  var city = req.query.city;
-
+  var city = req.query.city ? req.query.city : "Denver";
+  
   geocoder.geocode(city)
     .then(function(location) {
       cafes.bestCafeDetails(location[0]).then(results => {
