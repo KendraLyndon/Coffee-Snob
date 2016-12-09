@@ -35,12 +35,12 @@ html
           else
             a(class="header-btn" href='/logout') log out
     main
-      form(action='/users' method='post' id='login-form' class='user-form hidden')
+      form(action='/users' method='get' id='login-form' class='user-form hidden')
         input(type='text' name='user_name' placeholder='user name' class='user-form-input')
         input(type='text' name='password' placeholder='password' class='user-form-input')
         input(type='submit' value='log in' class='user-form-submit')
-      form(action='/users/new' method='post' id='signup-form' class='user-form hidden')
-        input(type='text' name='user_name' placeholder='user name' class='user-form-input')
+      form(action='/users' method='post' id='signup-form' class='user-form hidden')
+        input(type='text' name='user_name' placeholder='create user name' class='user-form-input')
         input(type='text' name='email' placeholder='email address' class='user-form-input')
         input(type='text' name='password' placeholder='password' class='user-form-input')
         input(type='submit' value='sign up' class='user-form-submit')

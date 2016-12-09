@@ -2,15 +2,15 @@ var express = require('express');
 var session = require('express-session');
 var router = express.Router();
 var Users = require('../models/users');
+var Validations = require('../helpers/validations');
 
-router.post('/', function(req, res, next) {
-  Users.find(req.body).then(function(user){
-    console.log(req.body);
+router.get('/', function(req, res, next) {
+  var userInfo = req.query;
+  Users.find(userInfo).then(function(user){
     if(user){
       res.cookie('user_id',user.id);
       res.cookie('user_name',user.user_name);
       if(req.cookies.city){
-        console.log(req.cookies.city);
         res.redirect(`/search?city=${req.cookies.city}`)
       }
       else {

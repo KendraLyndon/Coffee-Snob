@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "test": "./node_modules/.bin/jasmine-node spec"
   },
   "dependencies": {
     "body-parser": "~1.15.1",
@@ -15,6 +16,7 @@
     "express-session": "^1.14.1",
     "fs": "0.0.1-security",
     "jade": "~1.11.0",
+    "jasmine-node": "^1.14.5",
     "knex": "^0.11.10",
     "morgan": "~1.7.0",
     "node-geocoder": "^3.15.0",
