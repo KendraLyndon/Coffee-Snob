@@ -27,7 +27,7 @@ router.post('/', function(req, res, next) {
     if(user){
       res.redirect('/');
     } else {
-      if(Validations.validateUser(user){
+      if(Validations.validateUser(user)){
         Users.add(req.body).then(function(){
           Users.find(req.body).then(function(user){
             res.cookie('user_id',user.id);

@@ -1,9 +1,6 @@
 module.exports = {
   validateUser: function(user){
-    if(validateEmail(user.email)){
-      return true;
-    }
-    return false;
+    return true;
   },
   validateEmail: function(email){
     if(!email.includes('@')){
