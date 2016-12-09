@@ -13,7 +13,7 @@ module.exports = {
 
   findByEmail: function(email){
     return knex('users').where({'email':email}).first();
-  }
+  },
 
   findById: function(id){
     return knex('users').where({'id':id}).first();
